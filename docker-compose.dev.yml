@@ -1,0 +1,44 @@
+services:
+
+  # ──────────────────────────────────────────────
+  # Ollama • serveur LLM local (LLaMA 3)
+  # ──────────────────────────────────────────────
+  ollama:
+    image: ollama/ollama:latest
+    container_name: kore-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ──────────────────────────────────────────────
+  # Chroma DB • base de données vectorielle
+  # ──────────────────────────────────────────────
+  chroma:
+    image: chromadb/chroma:latest
+    container_name: kore-chroma
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma-data:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+      - ANONYMIZED_TELEMETRY=FALSE
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/heartbeat"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Spring Boot lancé depuis IntelliJ • pas de conteneur ici
+
+volumes:
+  ollama-data:
+  chroma-data:

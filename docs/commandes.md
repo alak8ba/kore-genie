@@ -4,6 +4,23 @@ Référence centralisée de toutes les commandes du projet, étape par étape.
 
 ---
 
+## Environnements
+
+| Fichier | Usage | Spring Boot |
+|---|---|---|
+| `docker-compose.dev.yml` | Dev local Win11 | Lancé depuis IntelliJ |
+| `docker-compose.prod.yml` | Production on-premise | Conteneurisé (image buildée) |
+
+```bash
+# DEV • infrastructure seule (Ollama + Chroma)
+docker compose -f docker-compose.dev.yml up -d
+
+# PROD • stack complète (Ollama + Chroma + kore-genie)
+docker compose -f docker-compose.prod.yml up --build -d
+```
+
+---
+
 ## Étape 01 • Build Maven
 
 ```bash
