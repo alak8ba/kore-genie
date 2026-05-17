@@ -1,13 +1,22 @@
 spring:
   application:
     name: kore-genie
+  mandatory-file-encoding: UTF-8
   servlet:
     multipart:
       max-file-size: 50MB
       max-request-size: 50MB
 
 server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+server:
   port: 8080
+
 
 kore:
   genie:
