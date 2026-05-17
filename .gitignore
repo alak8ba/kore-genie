@@ -19,5 +19,10 @@ Thumbs.db
 uploads/
 *.log
 
+# Angular
+frontend/.angular/
+frontend/node_modules/
+frontend/dist/
+
 desktop.ini
 /.m2/repository/
