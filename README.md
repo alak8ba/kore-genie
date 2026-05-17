@@ -4,20 +4,45 @@
 
 # kore-genie • Socle IA Privée & RAG Entreprise
 
+## Le nom
+
+**K** comme Kouba. **ORE** comme *core* — le socle.
+
+Ce n'est pas un acronyme inventé après coup. Le nom est venu naturellement : une identité derrière, une philosophie devant. Construire des fondations solides avant de construire des fonctionnalités. Penser architecture avant code.
+
+**KORE** est un projet open source destiné à la communauté. kore-genie en est la première brique.
+
+---
+
+## L'écosystème KORE
+
+kore-genie s'inscrit dans un écosystème plus large. Chaque brique suit la même logique : documentée, testée, utile.
+
+| Brique | Description | Statut |
+|---|---|---|
+| **kore-genie** | Socle IA privée & RAG entreprise | En cours |
+| kore-batch | Traitement par lots robuste | Prévu |
+| kore-stream | Traitement de flux temps réel | Prévu |
+| kore-react | Composants frontend réutilisables | Prévu |
+
+---
+
 ## Contexte
 
 La majorité des entreprises qui veulent exploiter l'IA générative se heurtent à un problème fondamental : leurs données sont confidentielles et ne peuvent pas transiter vers des services cloud publics (ChatGPT, Claude, Gemini).
 
-**GENIE** est un socle technique conçu pour répondre à ce problème. Il permet de déployer une IA conversationnelle capable de raisonner sur des données métier internes, en restant entièrement dans l'infrastructure de l'entreprise.
+**kore-genie** est un socle technique qui répond directement à ce problème. Il permet de déployer une IA conversationnelle capable de raisonner sur les données métier internes d'une entreprise, entièrement déconnectée du cloud, sans aucune dépendance propriétaire.
+
+C'est une démonstration concrète d'une capacité : **mettre en place une IA privée, souveraine et opérationnelle** pour un client, dans son infrastructure, avec ses documents.
 
 ---
 
 ## Philosophie
 
-- **Zéro donnée sortante** : aucun token ne quitte le périmètre de l'entreprise
-- **Un socle, N domaines** : le socle est agnostique du métier, le projet implémente son propre corpus
-- **Open source only** : LLaMA, Ollama, LangChain4j, Chroma • aucune dépendance propriétaire
-- **Progressif** : un MVP fonctionnel en quelques jours, extensible ensuite
+- **Zéro donnée sortante** • aucun token ne quitte le périmètre de l'entreprise
+- **Un socle, N domaines** • agnostique du métier, chaque projet implémente son propre corpus
+- **Open source only** • LLaMA, Ollama, LangChain4j, Chroma • aucune dépendance propriétaire
+- **Progressif** • un MVP fonctionnel en quelques jours, extensible ensuite
 
 ---
 
@@ -100,6 +125,6 @@ Outil permettant de faire tourner des LLMs open source en local (LLaMA, Mistral,
 
 ## Statut
 
-> Socle en phase de construction active. Les bases techniques sont posées, l'implémentation avance étape par étape.
+> Socle en construction active. Les bases techniques sont posées, l'implémentation avance étape par étape.
 
 Voir [`docs/`](docs/) pour le détail de chaque étape.
