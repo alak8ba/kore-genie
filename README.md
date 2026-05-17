@@ -14,19 +14,19 @@
 
 Ce n'est pas un acronyme inventé après coup. Le nom est venu naturellement : une identité derrière, une philosophie devant. Construire des fondations solides avant de construire des fonctionnalités. Penser architecture avant code.
 
-**KORE** est un projet open source destiné à la communauté. kore-genie en est la première brique.
+**KORE** est un écosystème de socles Java open source, destiné à la communauté.
 
 ---
 
 ## L'écosystème KORE
 
-kore-genie s'inscrit dans un écosystème plus large. Chaque brique suit la même logique : documentée, testée, utile.
+Chaque brique suit la même logique : extraite ou construite sur une base réelle, documentée, testée, utile.
 
 | Brique | Description | Statut |
 |---|---|---|
-| [kore-hexagonal](https://github.com/alak8ba/kore-hexagonal) | Architecture hexagonale Java | Disponible |
-| [kore-batch](https://github.com/alak8ba/kore-batch) | Traitement par lots robuste | Disponible |
-| **kore-genie** | Socle IA privée & RAG entreprise | En cours |
+| [kore-hexagonal](https://github.com/alak8ba/kore-hexagonal) | Architecture hexagonale • 1,5 an de production réelle • 658 commits | Disponible |
+| [kore-batch](https://github.com/alak8ba/kore-batch) | Traitement batch • plusieurs années de production • fort volume de données | Disponible |
+| **[kore-genie](https://github.com/alak8ba/kore-genie)** | Socle IA privée & RAG • déploiement on-premise • zéro donnée sortante | En cours |
 | kore-stream | Traitement de flux temps réel | Prévu |
 | kore-react | Composants frontend réutilisables | Prévu |
 
