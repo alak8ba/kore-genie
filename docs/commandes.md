@@ -174,4 +174,25 @@ wscat -c ws://localhost:8080/ws/rag
 
 ---
 
+## Étape 07 • Docker Compose complet
+
+```bash
+# Construire et démarrer tout le stack (Ollama + Chroma + kore-genie)
+docker compose up --build -d
+
+# Suivre les logs de kore-genie
+docker compose logs -f kore-genie
+
+# Reconstruire uniquement kore-genie après modif du code
+docker compose build kore-genie
+docker compose up -d kore-genie
+
+# Tester l'API dans le stack complet
+curl -X POST http://localhost:8080/api/llm/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question": "Test de bout en bout"}'
+```
+
+---
+
 *Ce fichier est mis à jour à chaque nouvelle étape.*

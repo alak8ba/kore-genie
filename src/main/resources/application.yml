@@ -1,6 +1,10 @@
 spring:
   application:
     name: kore-genie
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
 
 server:
   port: 8080
@@ -8,11 +12,11 @@ server:
 kore:
   genie:
     ollama:
-      base-url: http://localhost:11434   # URL du serveur Ollama (Docker)
-      model: llama3                      # Nom du modèle LLaMA 3
-      timeout: 120s                      # Timeout pour les réponses du LLM
+      base-url: ${KORE_GENIE_OLLAMA_BASE_URL:http://localhost:11434}
+      model: ${KORE_GENIE_OLLAMA_MODEL:llama3}
+      timeout: ${KORE_GENIE_OLLAMA_TIMEOUT:120s}
     chroma:
-      base-url: http://localhost:8000    # URL de Chroma DB (Docker)
-      collection: kore-genie-docs        # Nom de la collection de vecteurs
+      base-url: ${KORE_GENIE_CHROMA_BASE_URL:http://localhost:8000}
+      collection: ${KORE_GENIE_CHROMA_COLLECTION:kore-genie-docs}
     ingestion:
-      upload-dir: ./uploads              # Dossier de dépôt des documents à ingérer
+      upload-dir: ${KORE_GENIE_INGESTION_UPLOAD_DIR:./uploads}
