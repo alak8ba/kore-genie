@@ -1,0 +1,32 @@
+services:
+
+  # ──────────────────────────────────────────────
+  # Ollama — serveur LLM local (LLaMA 3)
+  # ──────────────────────────────────────────────
+  ollama:
+    image: ollama/ollama:latest
+    container_name: kore-ollama
+    ports:
+      - "11434:11434"           # API Ollama accessible sur localhost:11434
+    volumes:
+      - ollama-data:/root/.ollama   # persistance des modèles téléchargés
+    restart: unless-stopped
+
+  # ──────────────────────────────────────────────
+  # Chroma DB — base de données vectorielle
+  # ──────────────────────────────────────────────
+  chroma:
+    image: chromadb/chroma:latest
+    container_name: kore-chroma
+    ports:
+      - "8000:8000"             # API Chroma accessible sur localhost:8000
+    volumes:
+      - chroma-data:/chroma/chroma   # persistance des vecteurs
+    environment:
+      - IS_PERSISTENT=TRUE
+      - ANONYMIZED_TELEMETRY=FALSE
+    restart: unless-stopped
+
+volumes:
+  ollama-data:
+  chroma-data:
