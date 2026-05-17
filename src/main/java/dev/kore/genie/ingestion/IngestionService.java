@@ -10,7 +10,7 @@ import dev.langchain4j.model.embedding.EmbeddingModel;
 import dev.langchain4j.store.embedding.EmbeddingStore;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.tika.metadata.TikaMetadataKeys;
+import org.apache.tika.metadata.TikaCoreProperties;
 import org.apache.tika.parser.AutoDetectParser;
 import org.apache.tika.sax.BodyContentHandler;
 import org.springframework.stereotype.Service;
@@ -53,7 +53,7 @@ public class IngestionService {
         AutoDetectParser parser = new AutoDetectParser();
         BodyContentHandler handler = new BodyContentHandler(-1); // -1 = pas de limite de taille
         org.apache.tika.metadata.Metadata metadata = new org.apache.tika.metadata.Metadata();
-        metadata.set(TikaMetadataKeys.RESOURCE_NAME_KEY, file.getOriginalFilename());
+        metadata.set(TikaCoreProperties.RESOURCE_NAME_KEY, file.getOriginalFilename());
 
         try (InputStream stream = file.getInputStream()) {
             parser.parse(stream, handler, metadata);
