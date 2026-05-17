@@ -2,7 +2,11 @@
   <img src="assets/logo-kore-genie.svg" alt="kore-genie logo" width="160"/>
 </p>
 
-# kore-genie • Socle IA Privée & RAG Entreprise
+# KORE GENIE
+
+> Socle IA Privée & RAG Entreprise
+ 
+---
 
 ## Le nom
 
