@@ -137,4 +137,20 @@ curl http://localhost:8000/api/v1/collections/kore-genie-docs/count
 
 ---
 
+## Étape 05 — Moteur RAG
+
+```bash
+# Prérequis : document déjà ingéré via POST /api/ingest
+
+# Poser une question sur les documents indexés
+curl -X POST http://localhost:8080/api/rag/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question": "Quelle est notre politique de congés ?"}'
+
+# Réponse attendue
+# { "answer": "...", "sources": ["fichier.pdf"], "chunksUsed": 3 }
+```
+
+---
+
 *Ce fichier est mis à jour à chaque nouvelle étape.*
