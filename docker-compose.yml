@@ -1,7 +1,7 @@
 services:
 
   # ──────────────────────────────────────────────
-  # Ollama — serveur LLM local (LLaMA 3)
+  # Ollama • serveur LLM local (LLaMA 3)
   # ──────────────────────────────────────────────
   ollama:
     image: ollama/ollama:latest
@@ -13,7 +13,7 @@ services:
     restart: unless-stopped
 
   # ──────────────────────────────────────────────
-  # Chroma DB — base de données vectorielle
+  # Chroma DB • base de données vectorielle
   # ──────────────────────────────────────────────
   chroma:
     image: chromadb/chroma:latest

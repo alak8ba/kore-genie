@@ -1,4 +1,4 @@
-# Étape 02 — Ollama + Chroma via Docker Compose
+# Étape 02 • Ollama + Chroma via Docker Compose
 
 ## Objectif
 
@@ -44,10 +44,10 @@ services:
 | Clé | Rôle |
 |---|---|
 | `image` | Image Docker à utiliser (téléchargée depuis Docker Hub) |
-| `ports: "11434:11434"` | `hôte:conteneur` — on accède au service via `localhost:11434` |
+| `ports: "11434:11434"` | `hôte:conteneur` • on accède au service via `localhost:11434` |
 | `volumes` | Persistance : les données survivent à un redémarrage du conteneur |
 | `IS_PERSISTENT=TRUE` | Chroma sauvegarde les vecteurs sur disque (sinon tout est perdu à l'arrêt) |
-| `ANONYMIZED_TELEMETRY=FALSE` | Désactive l'envoi de statistiques vers Chroma — zéro donnée sortante |
+| `ANONYMIZED_TELEMETRY=FALSE` | Désactive l'envoi de statistiques vers Chroma • zéro donnée sortante |
 | `restart: unless-stopped` | Le conteneur redémarre automatiquement sauf si on l'arrête manuellement |
 
 ---
@@ -78,7 +78,7 @@ Le modèle ne se télécharge pas automatiquement. Il faut le demander à Ollama
 docker exec -it kore-ollama ollama pull llama3
 ```
 
-> Attention : LLaMA 3 (8B) pèse environ **4,7 Go**. Le téléchargement peut prendre plusieurs minutes selon ta connexion. C'est un téléchargement unique — le modèle est ensuite stocké dans le volume `ollama-data`.
+> Attention : LLaMA 3 (8B) pèse environ **4,7 Go**. Le téléchargement peut prendre plusieurs minutes selon ta connexion. C'est un téléchargement unique • le modèle est ensuite stocké dans le volume `ollama-data`.
 
 ### 4. Vérifier qu'Ollama répond
 
@@ -149,13 +149,13 @@ docker compose down -v
 | Concept | Explication |
 |---|---|
 | **Docker Compose** | Outil pour définir et lancer plusieurs conteneurs ensemble via un seul fichier YAML |
-| **Volume Docker** | Espace de stockage persistant géré par Docker — les données survivent aux redémarrages |
+| **Volume Docker** | Espace de stockage persistant géré par Docker • les données survivent aux redémarrages |
 | **Ollama** | Serveur REST qui charge un modèle LLM en mémoire et expose une API d'inférence |
-| **LLaMA 3** | Modèle de langage open source de Meta — 8 milliards de paramètres, tourne sans GPU dédié |
+| **LLaMA 3** | Modèle de langage open source de Meta • 8 milliards de paramètres, tourne sans GPU dédié |
 | **Chroma DB** | Base vectorielle légère, open source, stocke et recherche des embeddings |
 
 ---
 
 ## Prochaine étape
 
-→ **Étape 03** : Premier appel au LLM depuis Java via LangChain4j — Spring Boot parle à Ollama.
+→ **Étape 03** : Premier appel au LLM depuis Java via LangChain4j • Spring Boot parle à Ollama.

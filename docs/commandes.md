@@ -1,10 +1,10 @@
-# kore-genie — Commandes techniques
+# kore-genie • Commandes techniques
 
 Référence centralisée de toutes les commandes du projet, étape par étape.
 
 ---
 
-## Étape 01 — Build Maven
+## Étape 01 • Build Maven
 
 ```bash
 # Compiler le projet
@@ -22,7 +22,7 @@ mvn spring-boot:run
 
 ---
 
-## Étape 02 — Docker Compose (Ollama + Chroma)
+## Étape 02 • Docker Compose (Ollama + Chroma)
 
 ```bash
 # Démarrer les services en arrière-plan
@@ -62,7 +62,7 @@ docker compose down -v
 
 ---
 
-## Étape 03 — Premier appel LLM
+## Étape 03 • Premier appel LLM
 
 ```bash
 # Prérequis : Docker Compose up + llama3 téléchargé + mvn spring-boot:run
@@ -114,6 +114,25 @@ curl http://localhost:8080/api/llm/ask \
   -X POST \
   -H "Content-Type: application/json" \
   -d '{"question": "Test"}'
+```
+
+---
+
+## Étape 04 • Ingestion de documents
+
+```bash
+# Uploader un fichier dans Chroma via l'API
+curl -X POST http://localhost:8080/api/ingest \
+  -F "file=@/chemin/vers/ton/document.pdf"
+
+# Réponse attendue
+# { "filename": "document.pdf", "chunks": 42, "status": "OK" }
+
+# Vérifier les collections dans Chroma
+curl http://localhost:8000/api/v1/collections
+
+# Compter les vecteurs stockés
+curl http://localhost:8000/api/v1/collections/kore-genie-docs/count
 ```
 
 ---

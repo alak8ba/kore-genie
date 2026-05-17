@@ -16,7 +16,7 @@ La majorité des entreprises qui veulent exploiter l'IA générative se heurtent
 
 - **Zéro donnée sortante** : aucun token ne quitte le périmètre de l'entreprise
 - **Un socle, N domaines** : le socle est agnostique du métier, le projet implémente son propre corpus
-- **Open source only** : LLaMA, Ollama, LangChain4j, Chroma — aucune dépendance propriétaire
+- **Open source only** : LLaMA, Ollama, LangChain4j, Chroma • aucune dépendance propriétaire
 - **Progressif** : un MVP fonctionnel en quelques jours, extensible ensuite
 
 ---
@@ -77,7 +77,7 @@ La majorité des entreprises qui veulent exploiter l'IA générative se heurtent
 
 ## Concepts clés
 
-### RAG — Retrieval Augmented Generation
+### RAG • Retrieval Augmented Generation
 
 Le LLM seul ne connaît pas vos données internes. Le RAG consiste à :
 
@@ -86,7 +86,7 @@ Le LLM seul ne connaît pas vos données internes. Le RAG consiste à :
 3. Injecter ces passages dans le prompt envoyé au LLM
 4. Générer une réponse contextualisée
 
-> Le LLM ne mémorise rien — il raisonne sur ce qu'on lui donne à chaque appel.
+> Le LLM ne mémorise rien • il raisonne sur ce qu'on lui donne à chaque appel.
 
 ### Embeddings
 

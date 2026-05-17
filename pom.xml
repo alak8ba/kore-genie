@@ -36,28 +36,28 @@
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
 
-        <!-- LangChain4j — core -->
+        <!-- LangChain4j • core -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j</artifactId>
             <version>${langchain4j.version}</version>
         </dependency>
 
-        <!-- LangChain4j — Ollama (LLaMA 3) -->
+        <!-- LangChain4j • Ollama (LLaMA 3) -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-ollama</artifactId>
             <version>${langchain4j.version}</version>
         </dependency>
 
-        <!-- LangChain4j — Chroma vector store -->
+        <!-- LangChain4j • Chroma vector store -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-chroma</artifactId>
             <version>${langchain4j.version}</version>
         </dependency>
 
-        <!-- Apache Tika — ingestion PDF, Word, Markdown -->
+        <!-- Apache Tika • ingestion PDF, Word, Markdown -->
         <dependency>
             <groupId>org.apache.tika</groupId>
             <artifactId>tika-core</artifactId>

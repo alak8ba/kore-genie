@@ -1,4 +1,4 @@
-# Étape 01 — Scaffolding du projet Spring Boot 3
+# Étape 01 • Scaffolding du projet Spring Boot 3
 
 ## Objectif
 
@@ -86,7 +86,7 @@ kore:
 Ces valeurs seront injectées dans les beans Spring via `@ConfigurationProperties`.
 
 > **Pourquoi YAML et pas .properties ?**
-> YAML permet une hiérarchie lisible. Avec `.properties` on écrirait `kore.genie.ollama.base-url=...` sur chaque ligne — moins lisible dès qu'on a plusieurs niveaux.
+> YAML permet une hiérarchie lisible. Avec `.properties` on écrirait `kore.genie.ollama.base-url=...` sur chaque ligne • moins lisible dès qu'on a plusieurs niveaux.
 
 ---
 
@@ -99,8 +99,8 @@ Ces valeurs seront injectées dans les beans Spring via `@ConfigurationPropertie
 | **`@SpringBootApplication`** | Point d'entrée, active le scan et l'autoconfiguration |
 | **`application.yml`** | Fichier de config central, lu automatiquement par Spring au démarrage |
 | **LangChain4j** | Bibliothèque Java pour orchestrer des LLMs (comme LangChain en Python) |
-| **Ollama** | Serveur local qui fait tourner LLaMA 3 — on l'installera via Docker |
-| **Chroma DB** | Base de données vectorielle — stocke les embeddings des documents |
+| **Ollama** | Serveur local qui fait tourner LLaMA 3 • on l'installera via Docker |
+| **Chroma DB** | Base de données vectorielle • stocke les embeddings des documents |
 
 ---
 

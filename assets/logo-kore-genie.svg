@@ -13,7 +13,7 @@
     </filter>
   </defs>
 
-  <!-- Fond hexagonal — même base que kore-batch et kore-hexagonal -->
+  <!-- Fond hexagonal • même base que kore-batch et kore-hexagonal -->
   <polygon points="100,8 178,52 178,148 100,192 22,148 22,52"
            fill="url(#bg-genie)" stroke="#fbbf24" stroke-width="2"/>
 
@@ -21,7 +21,7 @@
   <polygon points="100,28 162,63 162,137 100,172 38,137 38,63"
            fill="none" stroke="#fbbf24" stroke-width="0.5" opacity="0.3"/>
 
-  <!-- Réseau neuronal — symbole IA -->
+  <!-- Réseau neuronal • symbole IA -->
   <!-- Noeud central -->
   <circle cx="100" cy="88" r="10" fill="#fbbf24" opacity="0.15" filter="url(#glow-gold)"/>
   <circle cx="100" cy="88" r="5"  fill="#fbbf24" filter="url(#glow-gold)"/>
