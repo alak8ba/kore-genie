@@ -20,8 +20,9 @@ kore-genie s'inscrit dans un écosystème plus large. Chaque brique suit la mêm
 
 | Brique | Description | Statut |
 |---|---|---|
+| [kore-hexagonal](https://github.com/alak8ba/kore-hexagonal) | Architecture hexagonale Java | Disponible |
+| [kore-batch](https://github.com/alak8ba/kore-batch) | Traitement par lots robuste | Disponible |
 | **kore-genie** | Socle IA privée & RAG entreprise | En cours |
-| kore-batch | Traitement par lots robuste | Prévu |
 | kore-stream | Traitement de flux temps réel | Prévu |
 | kore-react | Composants frontend réutilisables | Prévu |
 
