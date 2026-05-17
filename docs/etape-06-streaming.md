@@ -1,4 +1,4 @@
-# Étape 06 — Streaming WebSocket
+# Étape 06 • Streaming WebSocket
 
 ## Objectif
 
@@ -43,7 +43,7 @@ WebSocket :
 
 ## Explications fichier par fichier
 
-### `OllamaConfig.java` — nouveau bean
+### `OllamaConfig.java` - nouveau bean
 
 ```java
 @Bean
@@ -75,13 +75,13 @@ public class WebSocketConfig implements WebSocketConfigurer {
 }
 ```
 
-Enregistre le handler WebSocket sur l'URL `/ws/rag`. `setAllowedOrigins("*")` autorise toutes les origines — à restreindre à l'URL du frontend en production.
+Enregistre le handler WebSocket sur l'URL `/ws/rag`. `setAllowedOrigins("*")` autorise toutes les origines • à restreindre à l'URL du frontend en production.
 
 ---
 
 ### `RagStreamingHandler.java`
 
-C'est le cœur de cette étape. Il étend `TextWebSocketHandler` — Spring appelle `handleTextMessage` à chaque message reçu du client.
+C'est le cœur de cette étape. Il étend `TextWebSocketHandler` • Spring appelle `handleTextMessage` à chaque message reçu du client.
 
 #### Format du message client → serveur
 
@@ -100,7 +100,7 @@ Chaque token envoyé :
 { "token": "", "done": true }
 ```
 
-`done: true` signale la fin du stream — le client peut alors afficher la réponse complète ou débloquer l'interface.
+`done: true` signale la fin du stream • le client peut alors afficher la réponse complète ou débloquer l'interface.
 
 #### Le callback `StreamingResponseHandler`
 
@@ -125,9 +125,9 @@ new StreamingResponseHandler<>() {
 ```
 
 Trois callbacks :
-- `onNext` : appelé à chaque token — on l'envoie immédiatement via WebSocket
-- `onComplete` : fin normale — on envoie `done: true`
-- `onError` : erreur LLM — on envoie le message d'erreur + `done: true`
+- `onNext` : appelé à chaque token • on l'envoie immédiatement via WebSocket
+- `onComplete` : fin normale • on envoie `done: true`
+- `onError` : erreur LLM • on envoie le message d'erreur + `done: true`
 
 ---
 
@@ -190,11 +190,11 @@ ws.onmessage = (event) => {
 | **WebSocket** | Protocole de communication persistante et bidirectionnelle sur TCP |
 | **Streaming LLM** | Le LLM envoie les tokens au fur et à mesure de leur génération |
 | **Callback** | Fonction appelée automatiquement quand un événement se produit |
-| **`done: true`** | Signal de fin de stream — le client sait que la réponse est complète |
+| **`done: true`** | Signal de fin de stream • le client sait que la réponse est complète |
 | **`TextWebSocketHandler`** | Classe Spring qui simplifie la gestion des connexions WebSocket textuelles |
 
 ---
 
 ## Prochaine étape
 
-→ **Étape 07** : Docker Compose complet — Spring Boot rejoint Ollama et Chroma dans un seul `docker compose up`.
+→ **Étape 07** : Docker Compose complet • Spring Boot rejoint Ollama et Chroma dans un seul `docker compose up`.

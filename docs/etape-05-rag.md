@@ -1,4 +1,4 @@
-# Étape 05 — Moteur RAG complet
+﻿# Étape 05 • Moteur RAG complet
 
 ## Objectif
 
@@ -39,7 +39,7 @@ src/main/java/dev/kore/genie/
 
 ### `RagService.java`
 
-#### Étape 1 — Vectoriser la question
+#### Étape 1 • Vectoriser la question
 
 ```java
 Embedding questionEmbedding = embeddingModel.embed(question).content();
@@ -47,7 +47,7 @@ Embedding questionEmbedding = embeddingModel.embed(question).content();
 
 La question de l'utilisateur est transformée en vecteur, exactement comme les chunks lors de l'ingestion. C'est ce qui permet de comparer sémantiquement la question aux documents.
 
-#### Étape 2 — Rechercher dans Chroma
+#### Étape 2 • Rechercher dans Chroma
 
 ```java
 List<EmbeddingMatch<TextSegment>> matches = embeddingStore.findRelevant(
@@ -60,9 +60,9 @@ List<EmbeddingMatch<TextSegment>> matches = embeddingStore.findRelevant(
 | `TOP_K` | 5 | Nombre maximum de chunks à récupérer |
 | `MIN_SCORE` | 0.5 | Score de similarité cosinus minimum (0 = rien, 1 = identique) |
 
-Si aucun chunk ne dépasse le score minimum, on retourne un message explicite sans appeler le LLM — pas de réponse inventée.
+Si aucun chunk ne dépasse le score minimum, on retourne un message explicite sans appeler le LLM • pas de réponse inventée.
 
-#### Étape 3 — Construire le prompt enrichi
+#### Étape 3 • Construire le prompt enrichi
 
 ```java
 String context = matches.stream()
@@ -81,9 +81,9 @@ Le prompt envoyé à LLaMA 3 contient deux parties :
 - **Le contexte** : les 5 meilleurs chunks séparés par `---`
 - **La question** : ce que l'utilisateur a posé
 
-Le LLM ne voit jamais Chroma — il reçoit simplement un texte structuré et doit répondre à partir de lui.
+Le LLM ne voit jamais Chroma • il reçoit simplement un texte structuré et doit répondre à partir de lui.
 
-#### Étape 4 — System prompt strict
+#### Étape 4 • System prompt strict
 
 ```java
 private static final String SYSTEM_PROMPT = """
@@ -135,7 +135,7 @@ curl -X POST http://localhost:8080/api/rag/ask \
 
 | Endpoint | Contexte | Usage |
 |---|---|---|
-| `POST /api/llm/ask` | Aucun — LLM seul | Test du LLM, questions générales |
+| `POST /api/llm/ask` | Aucun • LLM seul | Test du LLM, questions générales |
 | `POST /api/rag/ask` | Chunks Chroma injectés | Questions sur les documents métier |
 
 ---
@@ -170,15 +170,15 @@ curl -X POST http://localhost:8080/api/rag/ask \
 
 | Concept | Explication |
 |---|---|
-| **Similarité cosinus** | Mesure l'angle entre deux vecteurs — 1.0 = identiques, 0.0 = sans rapport |
-| **TOP_K** | On ne prend que les K meilleurs chunks — le LLM a une fenêtre de contexte limitée |
-| **MIN_SCORE** | Seuil de pertinence — évite d'injecter des chunks hors-sujet |
+| **Similarité cosinus** | Mesure l'angle entre deux vecteurs • 1.0 = identiques, 0.0 = sans rapport |
+| **TOP_K** | On ne prend que les K meilleurs chunks • le LLM a une fenêtre de contexte limitée |
+| **MIN_SCORE** | Seuil de pertinence • évite d'injecter des chunks hors-sujet |
 | **System prompt strict** | Empêche le LLM d'halluciner des réponses hors contexte |
 | **Sources** | Traçabilité : on sait quels fichiers ont servi à construire la réponse |
-| **Hallucination** | Quand un LLM invente une information plausible mais fausse — le RAG réduit ce risque |
+| **Hallucination** | Quand un LLM invente une information plausible mais fausse • le RAG réduit ce risque |
 
 ---
 
 ## Prochaine étape
 
-→ **Étape 06** : Streaming WebSocket — la réponse s'affiche mot par mot au lieu d'attendre la fin.
+→ **Étape 06** : Streaming WebSocket • la réponse s'affiche mot par mot au lieu d'attendre la fin.

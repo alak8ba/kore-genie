@@ -46,7 +46,7 @@ public class RagStreamingHandler extends TextWebSocketHandler {
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         String question = objectMapper.readTree(message.getPayload()).get("question").asText();
-        log.info("WebSocket RAG stream — question : {}", question);
+        log.info("WebSocket RAG stream - question : {}", question);
 
         // 1. Vectoriser la question
         Embedding questionEmbedding = embeddingModel.embed(question).content();

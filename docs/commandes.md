@@ -1,4 +1,4 @@
-# kore-genie • Commandes techniques
+﻿# kore-genie • Commandes techniques
 
 Référence centralisée de toutes les commandes du projet, étape par étape.
 
@@ -137,7 +137,7 @@ curl http://localhost:8000/api/v1/collections/kore-genie-docs/count
 
 ---
 
-## Étape 05 — Moteur RAG
+## Étape 05 • Moteur RAG
 
 ```bash
 # Prérequis : document déjà ingéré via POST /api/ingest
@@ -153,7 +153,7 @@ curl -X POST http://localhost:8080/api/rag/ask \
 
 ---
 
-## Étape 06 — Streaming WebSocket
+## Étape 06 • Streaming WebSocket
 
 ```bash
 # Installer wscat (outil de test WebSocket)
