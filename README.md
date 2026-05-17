@@ -124,8 +124,24 @@ Outil permettant de faire tourner des LLMs open source en local (LLaMA, Mistral,
 
 ---
 
+## Construction • étape par étape
+
+| # | Étape | Ce qu'on a construit |
+|---|---|---|
+| [01](docs/etape-01-scaffolding.md) | Scaffolding | Spring Boot 3, Maven, configuration |
+| [02](docs/etape-02-ollama-chroma-docker.md) | Docker | Ollama + Chroma DB |
+| [03](docs/etape-03-langchain4j-llm.md) | LLM | Premier appel LangChain4j vers LLaMA 3 |
+| [04](docs/etape-04-ingestion.md) | Ingestion | Apache Tika + chunking + Chroma |
+| [05](docs/etape-05-rag.md) | RAG | Retrieval + prompt + génération |
+| [06](docs/etape-06-streaming.md) | Streaming | WebSocket token par token |
+| [07](docs/etape-07-docker-compose-complet.md) | Docker complet | Dockerfile + stack tout-en-un |
+| [08](docs/etape-08-angular.md) | Angular | Interface chat streaming |
+| [09](docs/etape-09-upload.md) | Upload | Drag & drop • indexation depuis l'UI |
+
+---
+
 ## Statut
 
-> Socle en construction active. Les bases techniques sont posées, l'implémentation avance étape par étape.
+> MVP fonctionnel. Zéro donnée sortante, entièrement on-premise.
 
 Voir [`docs/`](docs/) pour le détail de chaque étape.
