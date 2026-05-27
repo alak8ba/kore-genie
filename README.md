@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo-kore-genie.svg" alt="kore-genie logo" width="160"/>
+  <img src="assets/logo-kore-genie.svg" alt="kore-genie logo" width="200"/>
 </p>
 
 # KORE GENIE
@@ -10,7 +10,7 @@
 
 ## Le nom
 
-**K** comme Kouba. **ORE** comme *core* — le socle.
+**K** comme Kouba. **ORE** comme *core* - le socle.
 
 Ce n'est pas un acronyme inventé après coup. Le nom est venu naturellement : une identité derrière, une philosophie devant. Construire des fondations solides avant de construire des fonctionnalités. Penser architecture avant code.
 
